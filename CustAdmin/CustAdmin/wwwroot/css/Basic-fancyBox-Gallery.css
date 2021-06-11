@@ -1,0 +1,84 @@
+.flex-box{
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
+}
+
+.flex-wrap-wrap{
+  -webkit-flex-wrap:wrap;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+}
+
+.flex-justify-center{
+  -webkit-box-pack:center;
+  -moz-box-pack:center;
+  -webkit-justify-content:center;
+  -ms-flex-pack:center;
+  justify-content:center;
+}
+
+.flex-align-center{
+  -webkit-box-align:center;
+  -moz-box-align:center;
+  -webkit-align-items:center;
+  -ms-flex-align:center;
+  align-items:center;
+}
+
+.flex-box > div[class*="col"]{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+body{
+  background-color:#FFFFFF;
+}
+
+img#homeImage.img-responsive{
+  z-index:1;
+}
+
+input.HomeSearch{
+  position:absolute;
+  top:10px;
+  background-color:rgba(255,255,255,0.6);
+  border-radius:30px;
+  border:1px solid #dddddd;
+  /*padding-left:25px;*/
+}
+
+p.petName{
+  color:#008c31;
+  margin:0px;
+  font-weight:bold;
+}
+
+p.petPublishDate{
+  color:#008c31;
+  margin:0px;
+  font-size: small;
+}
+
+strong.petName{
+  color:#008c31;
+  margin:0px;
+  font-weight:bold;
+}
+
+p.petOwner{
+  font-style:italic;
+  margin:0px;
+}
+
+p.petCaption{
+  font-size:12px;
+  margin:0px;
+}
+
+div.panel-body.panelImpar{
+  background-color:#ddd;
+}
+

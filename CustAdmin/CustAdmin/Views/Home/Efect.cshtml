@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "Efecty Form";
+}
+
+<div class="modalPetNet" style="display: none; z-index: 9999;">
+    <div class="centerModalPetNet">
+        <img alt="" src="~/images/loader.gif" />
+        <div style="text-align:center;">
+            Loading...
+        </div>
+    </div>
+</div>
+<!-- Content -->
+<br>
+<br>
+<section>
+    <div class="snap-content">
+        <div class="page-wrapper">
+
+            <div>
+                <h2>Customers</h2>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-right: 30px;">
+                        <em class="emAddPet">Add Efecty</em>
+                        <br>
+                        <a href="#" class="emAddPet" data-toggle="modal" data-target="#myModal"
+                           data-trans-id="A">
+                            <img alt="Adicionar Efecty" style="width: 100%;"
+                                 src="~/images/misc/base/add.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="contentFormNormal">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Efecty form</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div id="content_mypets">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" aria-hidden="true" role="document">
+            <div class="modal-content">
+                <div class="modal-header modalHeading">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color:#64dd17!important;">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color:#64dd17!important;"></h4>
+                    <div>
+                        <input id="txtSessionPetId" type="text" width="50px" style="display:none;" />
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form class="" action="pet_mypets.html">
+                        <div class="login-wrap">
+                            <hr style="padding-bottom: 10px;">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4" style="margin-top:15px;">
+                                    <p>Nombre Completo:</p>
+                                </div>
+                                <div class="col-xs-8 col-md-8">
+                                    <input id="Efecty_FullName" type="text" class="form-control"
+                                           placeholder="Fill Field">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4" style="margin-top:15px;">
+                                    <p>Tipo Documento:</p>
+                                </div>
+                                <div class="col-xs-8 col-md-8">
+                                    <select name="cars" id="Efecty_DocType">
+                                        <option value="CC">Cedula Ciudadanía</option>
+                                        <option value="CI">Cedula Extranjeria</option>
+                                        <option value="PP">Pasaporter</option>
+                                        <option value="OO">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4" style="margin-top:15px;">
+                                    <p>Fecha Nacimiento:</p>
+                                </div>
+                                <div class="col-xs-8 col-md-8">
+                                    @*<input id="Efecty_BirthDate" type="text" class="form-control"
+                                        placeholder="Fill Field">*@
+                                    <input class="datepicker" data-date-format="mm/dd/yyyy" id="Efecty_BirthDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4" style="margin-top:15px;">
+                                    <p>Ganancia:</p>
+                                </div>
+                                <div class="col-xs-8 col-md-8">
+                                    <input id="Efecty_Gain" type="text" class="form-control"
+                                           placeholder="Fill Field">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4" style="margin-top:15px;">
+                                    <p>Estado Civil:</p>
+                                </div>
+                                <div class="col-xs-8 col-md-8">
+                                    @*<input type="checkbox" id="Efecty_MaritalStatusC" name="vehicle1" value="C">
+                                    <label for="vehicle1"> Casado</label><br>
+                                    <input type="checkbox" id="Efecty_MaritalStatusS" name="vehicle2" value="S">
+                                    <label for="vehicle2"> Soltero</label><br>*@
+
+                                    <input type='checkbox' name='thing' value='C' id="thing" /><label for="thing"></label>         Casado
+                                    <br>
+                                    <input type='checkbox' name='thing1' value='S' id="thing1" /><label for="thing1"></label>      Soltero
+                                    <br>
+                                </div>
+                            </div>
+                            <button id="btnRegister" type="button" class="btn btn-default btnGreen btn-block">Guardar!</button>
+                            <!-- <button class="btn btn-login btn-block"  type="submit" data-dismiss="modal" >Editar</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+</section>
+
+<script type="text/javascript" src="~/js/jquery.min.js"></script>
+<script type="text/javascript" src="~/scripts/custom.js"></script>
+<script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $.support.cors = true;
+</script>
+
+@*<script type="text/javascript" src="~/scripts/c_Account.js"></script>
+    <script type="text/javascript" src="~/scripts/c_Currency.js"></script>
+    <script type="text/javascript" src="~/scripts/c_Order.js"></script>
+    <script type="text/javascript" src="~/scripts/c_Payment.js"></script>*@
+@*<script type="text/javascript" src="~/js/bootstrap-datepicker16.js"></script>
+<script type="text/javascript" src="~/js/bootstrap-datepicker.es.min.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="~/js/bootbox.min.js"></script>
+<script type="text/javascript" src="~/js/configEfect.js"></script>
+<script type="text/javascript" src="~/scripts/c_Efecty.js"></script>
+<script>
+    $(document).bind('mobileinit', function () {
+        $.mobile.changePage.defaults.changeHash = true;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+    });
+</script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
